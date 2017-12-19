@@ -1,0 +1,11 @@
+{
+  "name": "rick-and-morteam-jingle",
+  "version": "1.0.0",
+  "description": "An audio jingle player for the Rick and Morteam.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Rick and Morteam @Norautotechlab",
+  "license": "ISC"
+}
