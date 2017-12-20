@@ -1,58 +1,52 @@
-<!doctype html>
-<html lang=en-US>
+<html>
   <head>
-    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8">
     <title>Rick and Morteam jingles</title>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='description' content='A Rick and Morty sounds player. This allow to play RAM sounds as jingle for the Rick and Morteam from @Norautotechlab.'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='canonical' href='https://rickandmorteamjingle.com/'>
-    <link rel='manifest' href='manifest.json'>
-    <meta name='mobile-web-app-capable' content='yes'>
-    <meta name='apple-mobile-web-app-capable' content='yes'>
-    <meta name='application-name' content='Rick and Morteam jingles'>
-    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
-    <meta name='apple-mobile-web-app-title' content='Rick and Morteam jingles'>
-    <link rel='icon' sizes='192x192' href='/images/touch/RAMJ_192.png'>
-    <link rel='apple-touch-icon' href='/images/touch/RAMJ_192.png'>
-    <meta name='msapplication-TileImage' content='/images/touch/RAMJS_144.png'>
-    <meta name='msapplication-TileColor' content='#2196F3'>
-    <meta name='theme-color' content='#2196F3'>
-    <meta property='og:title' content='Rick and Morteam jingles'>
-    <meta property='og:type' content='website'>
-    <meta property='og:image' content='https://rickandmorteamjingle.com/images/touch/RAMJ_192.png'>
-    <meta property='og:url' content='https://rickandmorteamjingle.com/'>
-    <meta property='og:description' content='A Rick and Morty sounds player. This allow to play RAM sounds as jingle for the Rick and Morteam from @Norautotechlab. No install just use it right away in your browser!'>
-    <meta name='twitter:card' content='summary'>
-    <meta name='twitter:url' content='https://rickandmorteamjingle.com/'>
-    <meta name='twitter:title' content='Rick and Morteam jingles'>
-    <meta name='twitter:description' content='A Rick and Morty sounds player. This allow to play RAM sounds as jingle for the Rick and Morteam from @Norautotechlab. No install just use it right away in your browser!'>
-    <meta name='twitter:image' content='https://rickandmorteamjingle.com/images/touch/RAMJ_192.png'>
-    <meta name='twitter:creator' content='@Norautotechlab'>
-    <link rel='stylesheet' href='styles/main.css'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A Rick and Morty sounds player. This allow to play RAM sounds as jingle for the Rick and Morteam from @Norautotechlab.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://rickandmorteamjingle.com/">
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Rick and Morteam jingles">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Rick and Morteam jingles">
+    <link rel="icon" sizes="192x192" href="/images/icons/homescreen192.png">
+    <link rel="apple-touch-icon" href="/images/icons/homescreen192.png">
+    <meta name="msapplication-TileImage" content="/images/touch/RAMJS_144.png">
+    <meta name="msapplication-TileColor" content="#97ce4c">
+    <meta name="theme-color" content="#97ce4c">
+    <meta property="og:title" content="Rick and Morteam jingles">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://rickandmorteamjingle.com/images/icons/homescreen192.png">
+    <meta property="og:url" content="https://rickandmorteamjingle.com/">
+    <meta property="og:description" content="A Rick and Morty sounds player. This allow to play RAM sounds as jingle for the Rick and Morteam from @Norautotechlab. No install just use it right away in your browser!">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://rickandmorteamjingle.com/">
+    <meta name="twitter:title" content="Rick and Morteam jingles">
+    <meta name="twitter:description" content="A Rick and Morty sounds player. This allow to play RAM sounds as jingle for the Rick and Morteam from @Norautotechlab. No install just use it right away in your browser!">
+    <meta name="twitter:image" content="https://rickandmorteamjingle.com/images/icons/homescreen192.png">
+    <meta name="twitter:creator" content="@Norautotechlab">
   </head>
   <body>
     <main>
-      <section>
-        <div class="btn-container">
-          <button id="jingle">My man !</button>
-        <div>
+      <header></header>
+      <section class="content">
+        <div class="player my-man" data-name="my-man"></div>
+        <div class="player yes" data-name="yes"></div>
+        <div class="player pickle-rick" data-name="pickle-rick"></div>
       </section>
     </main>
-    <div id='installer'>
-      <button class='button'>Install</button>
-      <span class='tooltip'></span>
-    </div>
-    <script src=/scripts/main.js></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js" async></script>
+    <script src="index.js" async></script>
     <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js', { scope: '/' })
-          .then(registration => {
-                console.log('Service Worker Registered');
-          });
-        navigator.serviceWorker.ready.then(registration => {
-           console.log('Service Worker Ready');
-        });
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope : '/' }).then(
+          registration => { console.log('service worker registered') }
+        );
+        navigator.serviceWorker.ready.then((registration) => { console.log('service worker ready') });    
       }
     </script>
   </body>
