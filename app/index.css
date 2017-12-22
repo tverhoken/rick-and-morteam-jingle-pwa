@@ -1,0 +1,58 @@
+:root {
+  --main-background-color: #97ce4c;
+  --tablet-size: 630px;
+}
+
+html {
+  background-color: var(--main-background-color)
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.content .player {
+  flex: 1;
+  min-height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1em 0;
+}
+
+.pickle-rick {
+  background-image: url('/images/pickle-rick.png');
+}
+
+.pickle-rick.active {
+  background-image: url('/images/pickle-rick.gif');
+}
+
+.yes {
+  background-image: url('/images/yes.png');
+}
+
+.yes.active {
+  background-image: url('/images/yes.gif');
+}
+
+.my-man {
+  background-image: url('/images/my-man.png');
+}
+
+.my-man.active {
+  background-image: url('/images/my-man.gif');
+}
+
+@media (min-width: 630px) {
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .content .player {
+    flex: 1;
+    margin: 0 1em;
+  }
+}
